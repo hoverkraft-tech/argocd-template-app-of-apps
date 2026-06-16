@@ -1,10 +1,11 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-merge-conflict
       - id: end-of-file-fixer
       - id: check-added-large-files
+        exclude: ^.github/logo.svg$
       - id: check-case-conflict
       - id: check-json
       - id: check-executables-have-shebangs
@@ -15,6 +16,7 @@ repos:
       - id: detect-aws-credentials
       - id: mixed-line-ending
       - id: trailing-whitespace
+
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v4.0.0
     hooks:
@@ -22,6 +24,7 @@ repos:
         stages:
           - commit-msg
         args: []
+
   - repo: https://github.com/bridgecrewio/checkov
     rev: 3.2.378
     hooks:
@@ -30,6 +33,7 @@ repos:
           - --quiet
           - --directory
           - .
+
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.7
     hooks:
